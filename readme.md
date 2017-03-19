@@ -41,15 +41,6 @@ then open application get the `key` and `token` add them to `config/stream_lab.p
 make sure you create public `channels` to your application
 
 
-## Last Thing
-
-go to this path /vendor/5dmatweb/streamlab/src/routes/streamlabRoutes.php
-change line number 13  to this
-
-```php
-  return \StreamLab\StreamLabProvider\Facades\StreamLabFacades::pushMessage($request->channelName , $request->eventName , $request->message);
-```
-
 ## Start
 
 ```
