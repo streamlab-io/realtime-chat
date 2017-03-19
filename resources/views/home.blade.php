@@ -52,7 +52,6 @@
 
 @section('script')
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-    <script src="{{ url('/') }}/js/index.js"></script>
     <script src="https://use.fontawesome.com/8a45ad20e8.js"></script>
     <script src="{{ url('/') }}/js/tooltip.js" charset="utf-8"></script>
     <script src="{{ url('/') }}/StreamLab/StreamLab.js"></script>

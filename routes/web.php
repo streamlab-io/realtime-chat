@@ -16,7 +16,6 @@
 });
 Auth::routes();
 Route::get('/home', 'HomeController@index');
-Route::get('/geo/{id?}', 'HomeController@geo');
 
 
 

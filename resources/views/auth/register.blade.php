@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('style')
-    <title> StreamLab TestChat Register</title>
+    <title> StreamLab RealTime Chat Register</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 @endsection
 
@@ -10,7 +10,7 @@
     <div class="row">
          <div class="col-lg-12 text-center">
              <h1>
-                 StreamLab TestChat
+                 StreamLab RealTime Chat Register
              </h1>
          </div>
         <div class="col-md-8 col-md-offset-2">
@@ -117,7 +117,7 @@
                 ['password','required' ],
                 ['password_confirmation','required' ],
                 ['_token','required' ],
-                    ['bio' , 'required' ]
+                ['bio' , 'required' ]
             ]
         });
     </script>
