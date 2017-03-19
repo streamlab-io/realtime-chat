@@ -38,7 +38,7 @@ then open application get the `key` and `token` add them to `config/stream_lab.p
 
 ## Create Cahnnel
 
-make sure you create public `channells` to your application
+make sure you create public `channels` to your application
 
 ## Start
 
