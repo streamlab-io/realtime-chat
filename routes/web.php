@@ -16,6 +16,9 @@
 });
 Auth::routes();
 Route::get('/home', 'HomeController@index');
+Route::post('streamLab/post/message' , function(\Illuminate\Http\Request $request){
+    return \StreamLab\StreamLabProvider\Facades\StreamLabFacades::pushMessage($request->channelName , $request->eventName , $request->message);
+});
 
 
 
