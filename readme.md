@@ -7,9 +7,9 @@ download all files
 PHP >= 5.6.4 , 
 PHP Curl extension 
 
-## Install  The Dependencies
+## Install The Dependencies
 
-now type this line on your console
+now type these lines on your console
 
 ```
 composer install
@@ -38,7 +38,7 @@ then open application get the `key` and `token` add them to `config/stream_lab.p
 
 ## Create Cahnnel
 
-make sure you create public `channels` to your application
+make sure you create public `channel` to your application call `public`
 
 
 ## Start
@@ -47,5 +47,5 @@ make sure you create public `channels` to your application
  php artisan serve
 ```
 
-and enjoy
+and enjoy.
 
