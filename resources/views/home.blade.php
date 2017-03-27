@@ -3,10 +3,15 @@
 @section('style')
     <link rel="stylesheet" href="{{ url('/') }}/css/reset.css">
     <link rel="stylesheet" href="{{ url('/') }}/css/style-rtl.css">
+    <style>
+        .container .left .people{
+            display: block;
+        }
+    </style>
 @endsection
 
-@section('content')
 
+@section('content')
     <div class="wrapper">
         <div class="container">
             <div class="left">
@@ -16,17 +21,18 @@
                         {{ csrf_field() }}
                     </form>
                     <a href="{{ url('/logout') }}" class="back" title="logout"
-                       onclick="event.preventDefault();
-                                   document.getElementById('logout-form').submit();">
+                       onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                         <i class="fa fa-power-off" style="margin-top: 6px;margin-left: 6px;"></i>
                     </a>
-                    <a href="javascript:;" class="back" data-chat="people" original-title="العودة للغرف" id="back"><i class="fa fa-arrow-circle-right fa-2x" aria-hidden="true"></i></a>
+                    <a href="javascript:;" class="back" onclick="back()" data-chat="people" original-title="العودة للغرف" id="back">
+                        <i class="fa fa-arrow-circle-right fa-2x" aria-hidden="true"></i>
+                    </a>
                 </div>
                 <ul class="people" id="people" data-room="room1">
 
                 </ul>
 
-                <ul class="rooms" id="rooms">
+                <ul class="rooms" id="rooms" style="display: none;">
 
                 </ul>
             </div>
@@ -46,14 +52,14 @@
         </div>
 
     </div>
-
-
 @endsection
+
+
 
 @section('script')
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
     <script src="https://use.fontawesome.com/8a45ad20e8.js"></script>
-    <script src="{{ url('/') }}/js/tooltip.js" charset="utf-8"></script>
     <script src="{{ url('/') }}/StreamLab/StreamLab.js"></script>
     @include('script')
 @endsection
+

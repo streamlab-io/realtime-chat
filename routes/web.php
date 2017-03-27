@@ -11,32 +11,10 @@
 |
 */
 
- Route::get('/', function () {
-   return redirect('home');
+Route::get('/', function () {
+    return view('welcome');
 });
+
 Auth::routes();
+
 Route::get('/home', 'HomeController@index');
-Route::post('streamLab/post/message' , function(\Illuminate\Http\Request $request){
-    return \StreamLab\StreamLabProvider\Facades\StreamLabFacades::pushMessage($request->channelName , $request->eventName , $request->message);
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

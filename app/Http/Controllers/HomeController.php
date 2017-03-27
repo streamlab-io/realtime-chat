@@ -2,9 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -25,16 +23,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $user = Auth::user();
+        $user = auth()->user();
         return view('home' ,compact('user'));
-    }
-    public function geo($id = null)
-    {
-        if($id != null){
-            $user = User::find($id);
-        }else{
-            $user = Auth::user();
-        }
-        return view('geo.index' ,compact('user' , 'id'));
     }
 }

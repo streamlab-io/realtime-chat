@@ -1,18 +1,16 @@
 @extends('layouts.app')
 
 @section('style')
-    <title> StreamLab RealTime Chat Register</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url('/css/app.css') }}">
 @endsection
 
 @section('content')
 <div class="container">
     <div class="row">
-         <div class="col-lg-12 text-center">
-             <h1>
-                 StreamLab RealTime Chat Register
-             </h1>
-         </div>
+        <div class="col-lg-12 text-center">
+            <h1>Register</h1>
+        </div>
+
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">Register</div>
@@ -49,8 +47,10 @@
                             </div>
                         </div>
 
+
+
                         <div class="form-group{{ $errors->has('bio') ? ' has-error' : '' }}">
-                            <label for="bio" class="col-md-4 control-label">Bio</label>
+                            <label for="email" class="col-md-4 control-label">Bio</label>
 
                             <div class="col-md-6">
                                 <input id="bio" type="text" class="form-control" name="bio" value="{{ old('bio') }}" required>
@@ -62,6 +62,7 @@
                                 @endif
                             </div>
                         </div>
+
 
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                             <label for="password" class="col-md-4 control-label">Password</label>
@@ -91,9 +92,7 @@
                                     Register
                                 </button>
 
-                                <a href="{{ url('/') }}/login" class="btn btn-primary">
-                                    login
-                                </a>
+                                <a href="{{ url('/login') }}"  class="btn btn-primary">Login</a>
                             </div>
                         </div>
                     </form>
@@ -110,15 +109,15 @@
         var AR = new AjaxRegister({
             form:'form',
             error:"error",
-            doneUrl:"/home",
             input:[
-                ['name' , 'required']
-                ,['email','required' ] ,
-                ['password','required' ],
-                ['password_confirmation','required' ],
-                ['_token','required' ],
-                ['bio' , 'required' ]
-            ]
+                ['name' ,'required'] ,
+                ['email','required'] ,
+                ['password','required'] ,
+                ['password_confirmation','required'] ,
+                ['_token','required'],
+                ['bio' , 'required']
+            ],
+            doneUrl:"/home"
         });
     </script>
 @endsection

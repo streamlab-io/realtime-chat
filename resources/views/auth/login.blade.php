@@ -1,18 +1,17 @@
 @extends('layouts.app')
 
 @section('style')
-    <title> StreamLab RealTime Chat Login</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url('/css/app.css') }}">
 @endsection
 
 @section('content')
 <div class="container">
     <div class="row">
+
         <div class="col-lg-12 text-center">
-            <h1>
-                StreamLab RealTime Chat Login
-            </h1>
+            <h1>Login</h1>
         </div>
+
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">Login</div>
@@ -66,9 +65,7 @@
                                     Login
                                 </button>
 
-                                <a href="{{ url('/') }}/register" class="btn btn-primary">
-                                    register
-                                </a>
+                                <a href="{{ url('/register') }}"  class="btn btn-primary">register</a>
 
                                 <a class="btn btn-link" href="{{ route('password.request') }}">
                                     Forgot Your Password?
@@ -90,7 +87,9 @@
             email:"email",
             password:"password",
             btn:"btn",
-            successUrl:"/home"
+            url:"/login",
+            successUrl:"/home",
+            mode:"toast" ///alert or toast
         });
     </script>
 

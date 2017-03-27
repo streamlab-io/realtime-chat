@@ -168,9 +168,8 @@ return [
          */
         Laravel\Tinker\TinkerServiceProvider::class,
         StreamLab\StreamLabProvider\StreamLabServiceProvider::class,
-        AjaxLogin\AjaxLoginProvider\AjaxLoginProvider::class,
         AjaxRegister\AjaxRegisterProvider\AjaxRegisterProvider::class,
-
+        AjaxLogin\AjaxLoginProvider\AjaxLoginProvider::class,
 
         /*
          * Application Service Providers...

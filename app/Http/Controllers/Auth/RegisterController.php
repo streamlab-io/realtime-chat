@@ -52,11 +52,12 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
          $vaild =   Validator::make($data, [
-            'name' => 'required|max:255|unique:users',
+            'name' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:6|confirmed',
-             'bio' => 'required|min:6|max:50'
+             'bio' => 'required'
         ]);
+
 
         if($vaild->fails()){
             return json_encode($vaild->errors());
@@ -68,24 +69,30 @@ class RegisterController extends Controller
 
     public function register(Request $request)
     {
+
         $v = $this->validator($request->all());
 
         if(!is_bool($v)){
             return $v;
         }
 
+
         event(new Registered($user = $this->create($request->all())));
 
         $this->guard()->login($user);
+
 
         $data = [
             'id' => $user->id,
             'secret' => $user->id.$user->email.$user->name,
             'name' => $user->name,
-             'bio' => $user->bio,
+            'bio' => $user->bio
         ];
 
+
         StreamLabFacades::createUser($data);
+
+
 
         return $this->registered($request, $user)
             ?: redirect($this->redirectPath());
@@ -101,7 +108,6 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],

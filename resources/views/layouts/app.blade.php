@@ -8,6 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+    <title>Realtime Chat App</title>
 
     <!-- Scripts -->
     <script>
@@ -18,7 +19,7 @@
     @yield('style')
 </head>
 <body>
-    @yield('content')
-    @yield('script')
+   @yield('content')
+   @yield('script')
 </body>
 </html>
